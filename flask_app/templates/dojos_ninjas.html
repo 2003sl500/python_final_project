@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Ninjas</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: firebrick;
+        }
+
+        table {
+            margin: 0px auto;
+            width: 100%;
+            border: 3px ridge rgba(0, 0, 255, 0.404);
+            box-shadow: 10px 10px 10px rgba(78, 118, 145, 0.322);
+        }
+
+        th {
+            border: 3px ridge rgba(0, 0, 255, 0.616);
+            padding: 7px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        td {
+            border: 3px ridge rgba(0, 0, 255, 0.404);
+            padding: 7px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        #anchor {
+            margin-top: 25px;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>{{ session['name'] }} Ninjas</h1>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in ninja_info %}
+                <tr>
+                    <td>{{ data.first_name }}</td>
+                    <td>{{ data.last_name }}</td>
+                    <td>{{ data.age }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+    <div class="row" id="anchor">
+        <a href="/index/dojos">Home</a>
+    </div>
+</div>
+</body>
+</html>
