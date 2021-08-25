@@ -4,11 +4,23 @@ from flask_app.models.client import Clients
 
 @app.route('/')
 def base_route():
-
+    if 'cuid' in session:
+        session.clear()
+        return redirect('/')
     return render_template('index.html')
+
+@app.route('/register')
+def register():
+    if 'cuid' in session:
+        session.clear()
+        return redirect('/')
+    return render_template('clients.html')
 
 @app.route('/login')
 def login():
+    if 'cuid' in session:
+        session.clear()
+        return redirect('/')
     return render_template('clients.html')
 
 @app.route('/clients', methods=['POST'])

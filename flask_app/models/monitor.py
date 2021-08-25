@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models import ninja
+
 
 DB = 'python_proj'
 MON = 'monitors'
