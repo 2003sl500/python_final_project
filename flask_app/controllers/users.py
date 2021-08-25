@@ -1,49 +1,57 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models.dojo import Dojos
-from flask_app.models.ninja import Ninjas
+from flask_app.models.client import Clients
 
 @app.route('/')
 def base_route():
 
-    return redirect('/index/dojos')
+    return render_template('index.html')
 
-@app.route('/index/dojos')
-def index_dojos():
-    dojo_info = Dojos.get_all()
-    return render_template('dojo.html', dojo_info = dojo_info)
+@app.route('/login')
+def login():
+    return render_template('index.html')
 
-@app.route('/index/ninjas')
-def index_ninjas():
-    ninja_info = Ninjas.get_all()
-    return render_template('show_ninjas.html', ninja_info = ninja_info)
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
 
-@app.route('/create/dojos', methods = ['POST'])
-def create_dojos():
-    data = {
-        'name': request.form['name']
-    }
-    Dojos.create(data)
-    return redirect('/index/dojos')
+@app.route('/clients')
+def clients():
+    
+    return render_template('clients.html')
 
-@app.route('/create/ninja_page')
-def create_ninja_page():
-    dojo_names = Dojos.get_all()
-    return render_template('ninja.html', dojo_names = dojo_names)
+@app.route('/cases')
+def cases():
+    
+    return render_template('cases.html')
 
-@app.route('/create/ninjas', methods = ['POST'])
-def create_ninjas():
-    data = {
-        'dojo_id': request.form['dojo_id'],
-        'first_name': request.form['first_name'],
-        'last_name': request.form['last_name'],
-        'age': request.form['age']
-    }
-    Ninjas.create(data)
-    return redirect('/index/ninjas')
+@app.route('/motherboards')
+def motherboards():
+    
+    return render_template('motherboards.html')
 
-@app.route('/index/dojo/ninjas/<int:id>/<name>')
-def dojos_ninjas(id, name):
-    ninja_info = Ninjas.show_dojo_ninjas(id)
-    session['name'] = name
-    return render_template('dojos_ninjas.html', ninja_info = ninja_info)
+@app.route('/cpus')
+def cpus():
+    
+    return render_template('cpus.html')
+
+@app.route('/memory')
+def memory():
+    
+    return render_template('memory.html')
+
+@app.route('/monitors')
+def monitors():
+    
+    return render_template('monitors.html')
+
+@app.route('/keyboards_combo')
+def keyboards_combo():
+    
+    return render_template('keyboards_combo.html')
+
+@app.route('/storage')
+def storage():
+    
+    return render_template('storage.html')

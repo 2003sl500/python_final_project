@@ -3,7 +3,7 @@ from flask_app.models import ninja
 
 DATABASE = 'dojos_ninjas'
 
-class Dojos:
+class Clients:
     def __init__(self, data):
         self.id = data['id']
         self.name = data['name']
