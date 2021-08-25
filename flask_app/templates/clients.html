@@ -35,7 +35,9 @@
                                     >
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="/motherboards"
+                                    <a
+                                        class="dropdown-item"
+                                        href="/motherboards"
                                         >Motherboards</a
                                     >
                                 </li>
@@ -60,7 +62,9 @@
                                     >
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="/keyboards_combo"
+                                    <a
+                                        class="dropdown-item"
+                                        href="/keyboards_combo"
                                         >Keyboards and Mice</a
                                     >
                                 </li>
@@ -78,11 +82,151 @@
                 <div class="col-1"><a href="/logout">Logout</a></div>
             <div class="col-1"></div>
         </div>
-        <div class="row"></div>
-    </div>
-    < <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle')) var dropdownList = dropdownElementList.map(function(dropdownToggleEl) { return new bootstrap.Dropdown(dropdownToggleEl) })
-        </script>
-</body>
+        <div class="row">
+            <div class="row mt-4">
+                <div class="col-5">
+                    <div class="row mt-1">
+                        <h2>Register</h2>
+                    </div>
+                    <form action="/register" method="post">
+                        <div class="mb-3 mt-3">
+                            <label for="fname" class="form-label">First Name:</label
+                                >
+                                <input
+                                    type="fname"
+                                    class="form-control"
+                                    id="fname"
+                                />
+                                <br />
+                                {% with fname_error =
+                                get_flashed_messages(category_filter=['fname'])
+                                %} {% for message in fname_error %}
+                                <span style="color: red">{{ message }}</span>
+                                {% endfor %} {% endwith %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="lname" class="form-label"
+                                    >Last Name:</label
+                                >
+                                <input
+                                    type="lname"
+                                    class="form-control"
+                                    id="lname"
+                                />
+                                <br />
+                                {% with lname_error =
+                                get_flashed_messages(category_filter=['lname'])
+                                %} {% for message in lname_error %}
+                                <span style="color: red">{{ message }}</span>
+                                {% endfor %} {% endwith %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label"
+                                    >Email:</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                />
+                                <br />
+                                {% with email_error =
+                                get_flashed_messages(category_filter=['email'])
+                                %} {% for message in email_error %}
+                                <span style="color: red">{{ message }}</span> {%
+                                endfor %} {% endwith %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label"
+                                    >Password:</label
+                                >
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                />
+                                <br />
+                                {% with password_error =
+                                get_flashed_messages(category_filter=['password'])
+                                %} {% for message in password_error %}
+                                <span style="color: red">{{ message }}</span>
+                                {% endfor %} {% endwith %}
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="conf_password" class="form-label"
+                                    >Confirm Password:</label
+                                >
+                                <input
+                                    type="conf_password"
+                                    class="form-control"
+                                    id="conf_password"
+                                />
+                                <br />
+                                {% with conf_password_error =
+                                get_flashed_messages(category_filter=['conf_password'])
+                                %} {% for message in conf_password_error %}
+                                <span style="color: red">{{ message }}</span>
+                                {% endfor %} {% endwith %}
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Register
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-5">
+                        <form action="/login" method="post">
+                            <div class="row"><h2>Login</h2></div>
+                            <div class="mb-3 mt-3">
+                                <label for="email_login" class="form-label"
+                                    >Email:</label
+                                >
+                                <input
+                                    type="email_login"
+                                    class="form-control"
+                                    id="email_login"
+                                />
+                                <br />
+                                {% with email_login_error =
+                                get_flashed_messages(category_filter=['email_login'])
+                                %} {% for message in email_login_error %}
+                                <span style="color: red">{{ message }}</span> {%
+                                endfor %} {% endwith %}
+                            </div>
+                            <div class="mb-3">
+                                <label for="password_login" class="form-label"
+                                    >Password:</label
+                                >
+                                <input
+                                    type="password_login"
+                                    class="form-control"
+                                    id="password_login"
+                                />
+                                <br />
+                                {% with password_login_error =
+                                get_flashed_messages(category_filter=['password_login'])
+                                %} {% for message in password_login_error %}
+                                <span style="color: red">{{ message }}</span>
+                                {% endfor %} {% endwith %}
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Login
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        >
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle')) var dropdownList = dropdownElementList.map(function(dropdownToggleEl) { return new bootstrap.Dropdown(dropdownToggleEl) })
+        </script>
+    </body>
 </html>

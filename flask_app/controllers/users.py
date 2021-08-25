@@ -9,17 +9,17 @@ def base_route():
 
 @app.route('/login')
 def login():
-    return render_template('index.html')
+    return render_template('clients.html')
+
+@app.route('/clients', methods=['POST'])
+def clients():
+    
+    return redirect('/')
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
-
-@app.route('/clients')
-def clients():
-    
-    return render_template('clients.html')
 
 @app.route('/cases')
 def cases():
