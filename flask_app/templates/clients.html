@@ -14,14 +14,26 @@
         body {
             margin: 0px;
             padding: 0px;
-            background-color: rgb(190, 217, 241);
+            background-color: rgba(212, 227, 240, 0.562);
+        }
+        
+        .navigation {
+            background-color: rgba(145, 143, 143, 0.452);
+            border: 3px ridge rgb(66, 2, 2);
+            border-radius: 10px;
+        }
+        
+        .navigation a {
+            color: rgb(90, 1, 1);
+            font-weight: 600;
+            font-size: 1rem;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row mt-4 text-center">
+        <div class="navigation row mt-4 text-center align-items-center">
             <div class="col-1"></div>
             <div class="col-9">
                 <ul class="nav nav-tabs">
@@ -76,6 +88,11 @@
             <div class="col-1"></div>
         </div>
         <div class="row">
+            <div class="row">
+                <div class="col text-center">
+                    <p>* fields are required</p>
+                </div>
+            </div>
             <div class="row mt-4">
                 <div class="col-5">
                     <div class="row mt-1">
@@ -83,12 +100,14 @@
                     </div>
                     <form action="/register" method="post">
                         <div class="mb-3 mt-3">
-                            <label for="fname" class="form-label">First Name:</label
+                            <label for="fname" class="form-label">First Name: *</label
                                 >
                                 <input
-                                    type="fname"
+                                    type="text"
+                                    name="fname"
                                     class="form-control"
                                     id="fname"
+                                    value="{{ session['form']['fname'] }}"
                                 />
                                 <br />
                                 {% with fname_error =
@@ -99,12 +118,14 @@
                             </div>
                             <div class="mb-3">
                                 <label for="lname" class="form-label"
-                                    >Last Name:</label
+                                    >Last Name: *</label
                                 >
                                 <input
-                                    type="lname"
+                                    type="text"
+                                    name="lname"
                                     class="form-control"
                                     id="lname"
+                                    value="{{ session['form']['lname'] }}"
                                 />
                                 <br />
                                 {% with lname_error =
@@ -115,12 +136,14 @@
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label"
-                                    >Email:</label
+                                    >Email: *</label
                                 >
                                 <input
                                     type="email"
+                                    name="email"
                                     class="form-control"
                                     id="email"
+                                    value="{{ session['form']['email'] }}"
                                 />
                                 <br />
                                 {% with email_error =
@@ -129,12 +152,70 @@
                                 <span style="color: red">{{ message }}</span> {%
                                 endfor %} {% endwith %}
                             </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label"
+                                    >Address:</label
+                                >
+                                <input
+                                    type="text"
+                                    name="address"
+                                    class="form-control"
+                                    id="address"
+                                    value="{{ session['form']['address'] }}"
+                                />
+                                <br />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="city" class="form-label"
+                                    >City:</label
+                                >
+                                <input
+                                    type="text"
+                                    name="city"
+                                    class="form-control"
+                                    id="city"
+                                    value="{{ session['form']['city'] }}"
+                                />
+                                <br />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="state" class="form-label"
+                                    >state:</label
+                                >
+                                <input
+                                    type="text"
+                                    name="state"
+                                    class="form-control"
+                                    id="state"
+                                    value="{{ session['form']['state'] }}"
+                                />
+                                <br />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="zip" class="form-label"
+                                    >Zip:</label
+                                >
+                                <input
+                                    type="number"
+                                    name="zip"
+                                    class="form-control"
+                                    id="zip"
+                                    value="{{ session['form']['zip'] }}"
+                                />
+                                <br />
+                            </div>
+
                             <div class="mb-3">
                                 <label for="password" class="form-label"
-                                    >Password:</label
+                                    >Password: *</label
                                 >
                                 <input
                                     type="password"
+                                    name="password"
                                     class="form-control"
                                     id="password"
                                 />
@@ -148,10 +229,11 @@
 
                             <div class="mb-3">
                                 <label for="conf_password" class="form-label"
-                                    >Confirm Password:</label
+                                    >Confirm Password: *</label
                                 >
                                 <input
-                                    type="conf_password"
+                                    type="password"
+                                    name="conf_password"
                                     class="form-control"
                                     id="conf_password"
                                 />
@@ -170,39 +252,37 @@
                     </div>
                     <div class="col-2"></div>
                     <div class="col-5">
-                        <form action="/login" method="post">
+                        <form action="/login/user" method="post">
                             <div class="row"><h2>Login</h2></div>
                             <div class="mb-3 mt-3">
                                 <label for="email_login" class="form-label"
-                                    >Email:</label
+                                    >Email: *</label
                                 >
                                 <input
-                                    type="email_login"
+                                    type="email"
+                                    name="email_login"
                                     class="form-control"
                                     id="email_login"
+                                    value="{{ session['email_login'] }}"
                                 />
                                 <br />
-                                {% with email_login_error =
-                                get_flashed_messages(category_filter=['email_login'])
-                                %} {% for message in email_login_error %}
+                                {% with login_error =
+                                get_flashed_messages(category_filter=['login'])
+                                %} {% for message in login_error %}
                                 <span style="color: red">{{ message }}</span> {%
                                 endfor %} {% endwith %}
                             </div>
                             <div class="mb-3">
                                 <label for="password_login" class="form-label"
-                                    >Password:</label
+                                    >Password: *</label
                                 >
                                 <input
-                                    type="password_login"
+                                    type="password"
+                                    name="password_login"
                                     class="form-control"
                                     id="password_login"
                                 />
                                 <br />
-                                {% with password_login_error =
-                                get_flashed_messages(category_filter=['password_login'])
-                                %} {% for message in password_login_error %}
-                                <span style="color: red">{{ message }}</span>
-                                {% endfor %} {% endwith %}
                             </div>
 
                             <button type="submit" class="btn btn-primary">

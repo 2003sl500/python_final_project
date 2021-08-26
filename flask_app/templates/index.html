@@ -14,14 +14,26 @@
         body {
             margin: 0px;
             padding: 0px;
-            background-color: rgb(212, 227, 240);
+            background-color: rgba(212, 227, 240, 0.562);
+        }
+        
+        .navigation {
+            background-color: rgba(145, 143, 143, 0.452);
+            border: 3px ridge rgb(66, 2, 2);
+            border-radius: 10px;
+        }
+        
+        .navigation a {
+            color: rgb(90, 1, 1);
+            font-weight: 600;
+            font-size: 1rem;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row mt-4 text-center">
+        <div class="navigation row mt-4 text-center align-items-center">
             <div class="col-1"></div>
             <div class="col-8">
                 <ul class="nav nav-tabs">
@@ -69,7 +81,7 @@
                     </ul>
                 </div>
             <div class="col-1"><a href="/login">Login</a></div>
-            <div class="col-1"><a href="/register">Register</a></div>
+            <div class="col-1"><a href="/registration">Register</a></div>
             <div class="col-1"></div>
         </div>
         <div class="row text-center mt-4">

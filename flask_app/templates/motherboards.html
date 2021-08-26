@@ -14,24 +14,36 @@
         body {
             margin: 0px;
             padding: 0px;
-            background-color: rgb(190, 217, 241);
+            background-color: rgba(212, 227, 240, 0.562);
+        }
+        
+        .navigation {
+            background-color: rgba(145, 143, 143, 0.452);
+            border: 3px ridge rgb(66, 2, 2);
+            border-radius: 10px;
+        }
+        
+        .navigation a {
+            color: rgb(90, 1, 1);
+            font-weight: 600;
+            font-size: 1rem;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row mt-4">
+        <div class="navigation row mt-4 text-center align-items-center">
             <div class="col-1"></div>
-            <div class="col-9">
+            <div class="col-8">
                 <ul class="nav nav-tabs">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Components</a
                             >
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="/cases"
-                                        >Cases</a
+                                    <a class="dropdown-item" href="/motherboards"
+                                        >Motherboards</a
                                     >
                                 </li>
                                 <li>
@@ -61,16 +73,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a
-                            >
-                        </li>
                     </ul>
                 </div>
-                <div class="col-1"><a href="/logout">Logout</a></div>
+                <div class="col-1"><a href="/user">Home</a></div>
+            <div class="col-1"><a href="/logout">Logout</a></div>
             <div class="col-1"></div>
         </div>
         <div class="row"></div>
