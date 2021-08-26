@@ -9,7 +9,7 @@ class Cpus:
         self.id = data['id']
         self.brand = data['brand']
         self.cores = data['cores']
-        self.speed = data['brand']
+        self.speed = data['speed']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.motherboard_id = data['motherboard_id']

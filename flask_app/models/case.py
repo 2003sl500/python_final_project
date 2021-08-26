@@ -14,3 +14,8 @@ class Cases:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.client_id = data['client_id']
+        
+    @classmethod
+    def create(cls, data):
+        query = f'INSERT INTO {CASES}( brand, color, type, size, updated_at, client_id ) VALUES( %(brand)s, %(color)s, %(type)s, %(size)s, NOW(), %(client_id)s );'
+        return connectToMySQL(DB).query_db(query, data)

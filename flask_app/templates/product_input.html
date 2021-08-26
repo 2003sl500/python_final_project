@@ -85,61 +85,233 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <label for="Product Categories">Choose a category:</label>
-
-                <select name="products" id="products">
-                        <option value="cases">Cases</option>
-                        <option value="motherboards">Motherboard's</option>
-                        <option value="cpus">CPU's</option>
-                        <option value="memory">Memory</option>
-                        <option value="storage">Storage</option>
-                        <option value="monitors">Monitor's</option>
-                        <option value="keyboard-mice">Keyboard & Mice</option>
-                    </select>
+                <ul>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#motherboards">Motherboards</a></li>
+                    <li><a href="#cpus">CPU's</a></li>
+                    <li><a href="#memory">Memory</a></li>
+                    <li><a href="#storage">Storage</a></li>
+                    <li><a href="#monitors">Monitors</a></li>
+                    <li><a href="#keyboards">Keyboard & Mice</a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="cases">
-                <form action="/product-cases">
-
+        <div class="row mt-5">
+            <div class="col-6" id="cases">
+                <form action="/product_input/cases">
+                    <h2>Cases:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="color">Color</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="color" id="color" />
+                    </div>
+                    <div class="row">
+                        <label for="type">Type</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="type" id="type" />
+                    </div>
+                    <div class="row">
+                        <label for="size">Size</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="size" id="size" />
+                    </div>
+                    <div class="row">
+                        <label for="client_id">Client Likes</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="client_id" id="client_id" />
+                    </div>
                 </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="motherboards">
-                <form action="/product-mb"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="motherboards">
+                <form action="/product_input/mb">
+                    <h2>Motherboard's:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="cpu_type">CPU Type</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="cpu_type" id="cpu_type" />
+                    </div>
+                    <div class="row">
+                        <label for="high_end">High End</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="high_end" id="high_end" />
+                    </div>
+                    <div class="row">
+                        <label for="mem">Memory</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="memory" id="mem" />
+                    </div>
+                    <div class="row">
+                        <label for="pci">PCI Slots</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="pci" id="pci" />
+                    </div>
+                    <div class="row">
+                        <label for="pcie">PCIE Slots</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="pcie" id="pcie" />
+                    </div>
+                    <div class="row">
+                        <label for="m2_drive">M2 Drive</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="m2_drive" id="m2_drive" />
+                    </div>
+                    <div class="row">
+                        <label for="motherboard_id">Motherboard Compatibility</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="motherboard_id" id="motherboard_id" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="cpus">
-                <form action="/product-cpus"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="cpus">
+                <form action="/product_input/cpus">
+                    <h2>CPU's:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="cores">Cores</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="cores" id="cores" />
+                    </div>
+                    <div class="row">
+                        <label for="speed">Speed</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="speed" id="speed" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="memory">
-                <form action="/product-memory"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="memory">
+                <form action="/product_input/memory">
+                    <h2>Memory:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="size">Size</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="size" id="size" />
+                    </div>
+                    <div class="row">
+                        <label for="slots_used">Slots Used</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="slots_used" id="slots_used" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="storage">
-                <form action="/product-storage"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="storage">
+                <form action="/product_input/storage">
+                    <h2>Storage:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="type">Type</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="type" id="type" />
+                    </div>
+                    <div class="row">
+                        <label for="size">Size</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="size" id="size" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="monitors">
-                <form action="/product-monitors"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="monitors">
+                <form action="/product_input/monitors">
+                    <h2>Monitors:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="size">Size</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="size" id="size" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col" id="keyboards">
-                <form action="/product-keyboards"></form>
+        <div class="row mt-5">
+            <div class="col-6" id="keyboards">
+                <form action="/product_input/keyboards">
+                    <h2>Keyboards and Mice:</h2>
+                    <div class="row">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="brand" id="brand" />
+                    </div>
+                    <div class="row">
+                        <label for="buttons">Buttons</label>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="buttons" id="buttons" />
+                    </div>
+                    <div class="row">
+                        <label for="wireless">Wireless</label>
+                    </div>
+                    <div class="row mb-5">
+                        <input type="text" name="wireless" id="wireless" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -1,6 +1,14 @@
+from flask_app.models.case import Cases
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.client import Clients
+from flask_app.models.case import Cases
+from flask_app.models.motherboard import Motherboards
+from flask_app.models.cpu import CPUS
+from flask_app.models.memory import Memorys
+from flask_app.models.storage import Storages
+from flask_app.models.monitor import Monitors
+from flask_app.models.keyboard import Keyboards
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
@@ -135,5 +143,51 @@ def storage():
 
 @app.route('/product_input')
 def product_input():
-    
+    if 'cuid' not in session:
+        session.clear()
+        return redirect('/')
+    elif (int)(session['cuid']) != 2:
+        session.clear()
+        return redirect('/')
     return render_template('product_input.html')
+
+@app.route('/product_input/cases')
+def input_cases():
+    data = {
+        'brand': request.form['brand'],
+        'color': request.form['color'],
+        'type': request.form['type'],
+        'size': request.form['size']
+    }
+    Cases.create(data)
+    return redirect('/product_input')
+
+@app.route('/product_input/mb')
+def input_mb():
+    
+    return redirect('/product_input')
+
+@app.route('/product_input/cpus')
+def input_cpus():
+    
+    return redirect('/product_input')
+
+@app.route('/product_input/memory')
+def input_memory():
+    
+    return redirect('/product_input')
+
+@app.route('/product_input/storage')
+def input_storage():
+    
+    return redirect('/product_input')
+
+@app.route('/product_input/monitors')
+def input_monitors():
+    
+    return redirect('/product_input')
+
+@app.route('/product_input/keyboards')
+def input_keyboards():
+    
+    return redirect('/product_input')
